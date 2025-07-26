@@ -19,7 +19,6 @@ modeBtn.addEventListener('click', () => {
         main.classList.add('lightBg')
     }
 })
-
 // -----------------------------get number--------------------------------
 let num = ''
 let txt = document.getElementById('txt')
@@ -31,16 +30,28 @@ buttons.forEach((items) => {
     items.addEventListener('click', () => {
 
         if (items.value == '=') {
-            num = num + ""
+            calculate()
         } else if (items.value == 'AC') {
-            num = '0'
+            num = ''
+            txt.value = num
         } else if (items.value == 'DEL') {
-            num = num.slice(0 , -1)
+            num = num.slice(0, -1)
+            txt.value = num
         } else {
             num = num + items.value
+            txt.value = num
         }
-        txt.value = num
     })
 });
 
-// ------------------------------------show number-----------------------------
+// ------------------------------------calculate-----------------------------
+function calculate() {
+    try {
+        let result = eval(num)
+        txt.value = result
+        num = result.toString()
+    } catch (err) {
+        num = ''
+        txt.value = "ERROR"
+    }
+}
