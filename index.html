@@ -9,7 +9,13 @@
 </head>
 
 <body class="overflow-hidden">
-    <main class="w-full h-[100vh] bgColor overflow-hidden flex justify-center items-center">
+    <main class="w-full h-[100vh] lightBg overflow-hidden flex justify-center items-center relative transition duration-[.4s] ease-in-out">
+        <span data-mode="light" id="mode" class="lightBtn w-[80px] h-[40px] absolute z-[12] top-[20px] left-[20px] rounded-[20px] transition ease-in-out cursor-pointer flex justify-between items-center px-[6px] before:content-[''] before:w-[35px] before:h-[35px]
+        before:rounded-[50%] before:bg-[#2D378D] before:absolute before:z-[-1] before:left-[50%] before:top-[50%] before:translate-y-[-50%] before:transition 
+        before:duration-[.4s] before:ease-in-out">
+            <img class="w-[30] h-[30px]" src="src/img/icons8-light-mode-78.png" alt="light">
+            <img class="w-[30] h-[30px]" src="src/img/icons8-dark-mode-48.png" alt="dark">
+        </span>
         <div class="bubbles absolute bottom-[-120px] flex flex-wrap mt-[70px] w-full justify-around">
             <span class="one bubble"></span>
             <span class="two bubble"></span>
@@ -56,6 +62,6 @@
         </div>
     </main>
 </body>
-
+<script src="src/js/master.js"></script>
 </html>
 <!-- shadow-[0 20px 50px rgba(0,0,0,0.15)] -->

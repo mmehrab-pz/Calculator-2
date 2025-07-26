@@ -1,11 +1,7 @@
 @import "tailwindcss";
 /* npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch */
 
-@layer base {
-    .bgColor {
-        background: linear-gradient(#2196f3, #e91e63);
-    }
-}
+@layer base {}
 
 @layer components {
     .bubble {
@@ -92,7 +88,7 @@
         }
     }
 
-    .txt{
+    .txt {
         width: 100%;
         height: 100px;
         margin: 0 3px;
@@ -119,8 +115,23 @@
         cursor: pointer;
         transition: all .3s ease;
 
-        &:hover{
+        &:hover {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .lightBtn{
+        background-color: white;
+
+        &::before{
+            transform: translateX(-104%);
+        }
+    }
+    .darkBtn{
+        background-color: #211F20;
+        
+        &::before{
+            transform: translateX(2%);
         }
     }
 }
@@ -139,4 +150,11 @@
     }
 }
 
-@layer theme {}
+@layer theme {
+    .lightBg {
+        background: linear-gradient(#2196f3, #e91e63);
+    }
+    .darkBg {
+        background: linear-gradient(#000000, #1c1c1c);
+    }
+}
