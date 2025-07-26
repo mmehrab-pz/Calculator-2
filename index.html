@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="src/styles/output.css">
 </head>
+
 <body class="overflow-hidden">
-    <main class="w-full h-[100vh] bgColor overflow-hidden">
+    <main class="w-full h-[100vh] bgColor overflow-hidden flex justify-center items-center">
         <div class="bubbles absolute bottom-[-120px] flex flex-wrap mt-[70px] w-full justify-around">
             <span class="one bubble"></span>
             <span class="two bubble"></span>
@@ -17,24 +19,43 @@
             <span class="six bubble"></span>
             <span class="seven bubble"></span>
         </div>
-        <div class="bubbles absolute bottom-[-120px] flex flex-wrap mt-[70px] w-full justify-around">
-            <span class="one bubble"></span>
-            <span class="two bubble"></span>
-            <span class="three bubble"></span>
-            <span class="four bubble"></span>
-            <span class="five bubble"></span>
-            <span class="six bubble"></span>
-            <span class="seven bubble"></span>
-        </div>
-        <div class="bubbles absolute bottom-[-120px] flex flex-wrap mt-[70px] w-full justify-around">
-            <span class="one bubble"></span>
-            <span class="two bubble"></span>
-            <span class="three bubble"></span>
-            <span class="four bubble"></span>
-            <span class="five bubble"></span>
-            <span class="six bubble"></span>
-            <span class="seven bubble"></span>
+        <div class="z-12 p-[15px] w-[420px] rounded-[12px] bg-[rgba(255,255,255,0.1)] shadow-[0 20px 50px] shadow-[rgba(0,0,0,0.15)] border-t border-l border-[rgba(255,255,255,0.5)]">
+            <form action="#" name="forms">
+                <input class="txt" type="text" name="answer">
+                <div class="">
+                    <input class="btn" type="button" value="AC">
+                    <input class="btn" type="button" value="DEL">
+                    <input class="btn" type="button" value="%">
+                    <input class="btn" type="button" value="/">
+                </div>
+                <div>
+                    <input class="btn" type="button" value="7">
+                    <input class="btn" type="button" value="8">
+                    <input class="btn" type="button" value="9">
+                    <input class="btn" type="button" value="*">
+                </div>
+                <div>
+                    <input class="btn" type="button" value="4">
+                    <input class="btn" type="button" value="5">
+                    <input class="btn" type="button" value="6">
+                    <input class="btn" type="button" value="-">
+                </div>
+                <div>
+                    <input class="btn" type="button" value="1">
+                    <input class="btn" type="button" value="2">
+                    <input class="btn" type="button" value="3">
+                    <input class="btn" type="button" value="+">
+                </div>
+                <div>
+                    <input class="btn" type="button" value="0">
+                    <input class="btn" type="button" value="00">
+                    <input class="btn" type="button" value=".">
+                    <input class="btn" type="button" value="=">
+                </div>
+            </form>
         </div>
     </main>
 </body>
+
 </html>
+<!-- shadow-[0 20px 50px rgba(0,0,0,0.15)] -->
