@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -155,4 +156,192 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .bottom-\[-120px\] {
+    bottom: -120px;
+  }
+  .mt-\[70px\] {
+    margin-top: 70px;
+  }
+  .flex {
+    display: flex;
+  }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .bg-linear-to-b {
+    --tw-gradient-position: to bottom;
+    @supports (background-image: linear-gradient(in lab, red, red)) {
+      --tw-gradient-position: to bottom in oklab;
+    }
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-\[\#138aec\] {
+    --tw-gradient-from: #138aec;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-\[\#e91e63\] {
+    --tw-gradient-to: #e91e63;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+}
+@layer base {
+  .bgColor {
+    background: linear-gradient(#2196f3, #e91e63);
+  }
+}
+@layer components {
+  .bubble {
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: move 10s linear infinite;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 60px;
+      width: 40%;
+      transform: skew(45deg) translateX(150px);
+      background-color: rgba(255, 255, 255, 0.15);
+      animation: mirror 3s linear infinite;
+    }
+  }
+  .one {
+    animation-delay: 2.2s;
+    transform: scale(2.15);
+    &::before {
+      animation-delay: 1.5s;
+    }
+  }
+  .two {
+    animation-delay: 3.5s;
+    transform: scale(1.55);
+    &::before {
+      animation-delay: 3.5s;
+    }
+  }
+  .three {
+    animation-delay: 0.2s;
+    transform: scale(0.35);
+    &::before {
+      animation-delay: 2.5s;
+    }
+  }
+  .four {
+    animation-delay: 6s;
+    transform: scale(2.15);
+    &::before {
+      animation-delay: 7.5s;
+    }
+  }
+  .five {
+    animation-delay: 0.7s;
+    transform: scale(0.5);
+    &::before {
+      animation-delay: 4.5s;
+    }
+  }
+  .six {
+    animation-delay: 4s;
+    transform: scale(2.5);
+    &::before {
+      animation-delay: 0.5s;
+    }
+  }
+  .seven {
+    animation-delay: 3s;
+    transform: scale(1.5);
+    &::before {
+      animation-delay: 6s;
+    }
+  }
+}
+@layer utilities {
+  @keyframes move {
+    100% {
+      transform: translateY(-100vh);
+    }
+  }
+  @keyframes mirror {
+    100% {
+      transform: translateX(-450px);
+    }
+  }
+}
+@layer theme;
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+    }
+  }
+}

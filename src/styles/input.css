@@ -1,2 +1,110 @@
 @import "tailwindcss";
 /* npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch */
+
+@layer base {
+    .bgColor{
+        background: linear-gradient(#2196f3, #e91e63);
+    }
+}
+
+@layer components {
+    .bubble {
+        height: 60px;
+        width: 60px;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+        animation: move 10s linear infinite;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 60px;
+            width: 40%;
+            transform: skew(45deg) translateX(150px);
+            background-color: rgba(255, 255, 255, 0.15);
+            animation: mirror 3s linear infinite;
+        }
+    }
+
+    .one {
+        animation-delay: 2.2s;
+        transform: scale(2.15);
+
+        &::before {
+            animation-delay: 1.5s;
+        }
+    }
+
+    .two {
+        animation-delay: 3.5s;
+        transform: scale(1.55);
+
+        &::before {
+            animation-delay: 3.5s;
+        }
+    }
+
+    .three {
+        animation-delay: 0.2s;
+        transform: scale(0.35);
+
+        &::before {
+            animation-delay: 2.5s;
+        }
+    }
+
+    .four {
+        animation-delay: 6s;
+        transform: scale(2.15);
+
+        &::before {
+            animation-delay: 7.5s;
+        }
+    }
+
+    .five {
+        animation-delay: 0.7s;
+        transform: scale(0.5);
+
+        &::before {
+            animation-delay: 4.5s;
+        }
+    }
+
+    .six {
+        animation-delay: 4s;
+        transform: scale(2.5);
+
+        &::before {
+            animation-delay: 0.5s;
+        }
+    }
+
+    .seven {
+        animation-delay: 3s;
+        transform: scale(1.5);
+
+        &::before {
+            animation-delay: 6s;
+        }
+    }
+}
+
+@layer utilities {
+    @keyframes move {
+        100% {
+            transform: translateY(-100vh);
+        }
+    }
+
+    @keyframes mirror {
+        100% {
+            transform: translateX(-450px);
+        }
+    }
+}
+
+@layer theme {}
