@@ -19,3 +19,28 @@ modeBtn.addEventListener('click', () => {
         main.classList.add('lightBg')
     }
 })
+
+// -----------------------------get number--------------------------------
+let num = ''
+let txt = document.getElementById('txt')
+const buttons = document.querySelectorAll('#calculator>div>input')
+
+console.log(buttons);
+
+buttons.forEach((items) => {
+    items.addEventListener('click', () => {
+
+        if (items.value == '=') {
+            num = num + ""
+        } else if (items.value == 'AC') {
+            num = '0'
+        } else if (items.value == 'DEL') {
+            num = num.slice(0 , -1)
+        } else {
+            num = num + items.value
+        }
+        txt.value = num
+    })
+});
+
+// ------------------------------------show number-----------------------------
